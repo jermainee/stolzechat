@@ -24,8 +24,12 @@ export default class App extends React.Component<IAppProps, IAppState> {
     }
 
     public componentDidMount() {
-        const socket = io(':3001');
+        fetch('http://localhost:3001/history.json')
+            .then(response => response.json())
+            .then(messages => this.setState({ messages }))
+            .catch(error => console.log(error));
 
+        const socket = io(':3001');
         socket.on('chat message', message => {
             this.setState({
                 messages: [
