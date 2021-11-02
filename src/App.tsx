@@ -24,7 +24,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
     }
 
     public componentDidMount() {
-        fetch('http://localhost:3001/history.json')
+        fetch(window.location.protocol + "//" + window.location.host + ':3001/history.json')
             .then(response => response.json())
             .then(messages => {
                 this.setState({ messages });
@@ -51,7 +51,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
                 <nav className="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
                         <a className="navbar-item" href="https://bulma.io">
-                            <strong>StolzeHaus</strong>
+                            <strong>StolzeChat</strong>&nbsp;<small>beta</small>
                         </a>
                     </div>
                 </nav>
