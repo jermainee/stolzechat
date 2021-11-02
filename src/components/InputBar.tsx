@@ -1,13 +1,14 @@
 import React, {ReactNode} from 'react';
 import {io} from "socket.io-client";
+import {IAppProps, IMessage} from "../App";
 
 interface IInputBarState {
     message: string;
 }
 
-export default class InputBar extends React.Component<{}, IInputBarState> {
+export default class InputBar extends React.Component<IAppProps, IInputBarState> {
 
-    public constructor(props: {}) {
+    public constructor(props: IAppProps) {
         super(props);
         this.state = { message: '' };
     }
@@ -40,10 +41,16 @@ export default class InputBar extends React.Component<{}, IInputBarState> {
     private handleSubmit = (event: any) => {
         event.preventDefault();
 
-        if (this.state.message.length > 0) {
-            const socket = io(':3001');
+        if (this.state.message.length > 0 && this.props.browserIdentifier) {
+            const message: IMessage = {
+                identifier: this.props.browserIdentifier,
+                text: this.state.message,
+                timestamp: Date.now(),
+            };
 
-            socket.emit('chat message', this.state.message);
+            const socket = io(':3001');
+            socket.emit('chat message', message);
+
             this.setState({ message: '' });
         }
     }

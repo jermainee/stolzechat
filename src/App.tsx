@@ -1,12 +1,43 @@
 import React, {ReactNode} from 'react';
-import Feed from "./components/Feed";
+import Messages from "./components/Messages";
 import InputBar from "./components/InputBar";
+import {io} from "socket.io-client";
+
+export interface IMessage {
+    identifier: string;
+    text: string;
+    timestamp: number;
+}
 
 export interface IAppProps {
     browserIdentifier: null|string;
 }
 
-export default class App extends React.Component<IAppProps> {
+interface IAppState {
+    messages: IMessage[];
+}
+
+export default class App extends React.Component<IAppProps, IAppState> {
+    public constructor(props: IAppProps) {
+        super(props);
+        this.state = { messages: [] };
+    }
+
+    public componentDidMount() {
+        const socket = io(':3001');
+
+        socket.on('chat message', message => {
+            this.setState({
+                messages: [
+                    ...this.state.messages,
+                    message
+                ]
+            });
+
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    }
+
     public render(): ReactNode {
         return (
             <>
@@ -19,10 +50,10 @@ export default class App extends React.Component<IAppProps> {
                 </nav>
 
                 <div className="container">
-                    <Feed browserIdentifier={this.props.browserIdentifier}/>
+                    <Messages browserIdentifier={this.props.browserIdentifier} messages={this.state.messages}/>
                 </div>
 
-                <InputBar/>
+                <InputBar browserIdentifier={this.props.browserIdentifier}/>
             </>
         );
     }
