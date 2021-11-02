@@ -24,7 +24,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
     }
 
     public componentDidMount() {
-        fetch(window.location.protocol + "//" + window.location.host + ':3001/history.json')
+        fetch(window.location.protocol + "//" + window.location.host + '/history.json')
             .then(response => response.json())
             .then(messages => {
                 this.setState({ messages });
