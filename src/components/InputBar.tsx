@@ -16,19 +16,21 @@ export default class InputBar extends React.Component<IAppProps, IInputBarState>
     public render(): ReactNode {
         return (
             <div style={{ position: "fixed", bottom: 0, padding: "1rem", width: "100%" }}>
-                <div className="columns is-mobile">
-                    <div className="column">
-                        <input className="input is-fullwidth"
-                               placeholder="Type your message ..."
-                               onChange={this.handleInputChange}
-                               value={this.state.message}
-                        />
-                    </div>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="columns is-mobile">
+                        <div className="column">
+                            <input className="input is-fullwidth"
+                                   placeholder="Type your message ..."
+                                   onChange={this.handleInputChange}
+                                   value={this.state.message}
+                            />
+                        </div>
 
-                    <div className="column is-narrow">
-                        <button className="button" onClick={this.handleSubmit}>↳</button>
+                        <div className="column is-narrow">
+                            <button className="button">↳</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         );
     }
