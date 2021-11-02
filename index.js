@@ -23,22 +23,28 @@ io.on('connection', (socket) => {
     });
 });
 
-
-
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/', function (req, res) {
+    const remoteAddress = req.socket.remoteAddress;
+
+    if (!remoteAddress.endsWith('.cpe.my-wire.de') && remoteAddress !== '::1') {
+        res.status(403).send('This website is only available from inside the StolzeHaus network');
+        return;
+    }
+
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 http.listen(port, () => {
     console.log(`Socket.IO server running at :${port}`);
 });
 
-app.get('/status.json', cors({ origin }), (req, res) => {
+app.get('/history.json', cors({ origin }), (req, res) => {
     const remoteAddress = req.socket.remoteAddress;
 
-    res.json({ success: remoteAddress.endsWith('.cpe.my-wire.de'), remoteAddress });
-});
+    if (!remoteAddress.endsWith('.cpe.my-wire.de') && remoteAddress !== '::1') {
+        res.status(403).send('This website is only available from inside the StolzeHaus network');
+        return;
+    }
 
-app.get('/history.json', cors({ origin }), (req, res) => {
     res.json(messages);
 });
