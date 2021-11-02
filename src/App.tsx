@@ -26,7 +26,10 @@ export default class App extends React.Component<IAppProps, IAppState> {
     public componentDidMount() {
         fetch('http://localhost:3001/history.json')
             .then(response => response.json())
-            .then(messages => this.setState({ messages }))
+            .then(messages => {
+                this.setState({ messages });
+                window.scrollTo(0, document.body.scrollHeight);
+            })
             .catch(error => console.log(error));
 
         const socket = io(':3001');
