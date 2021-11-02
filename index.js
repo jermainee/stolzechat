@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const http = require('http').Server(app);
 const io = require('socket.io')(http, { cors: { origin }});
-const port = 3001;
+const port = process.env.PORT || 3001;
 const messages = [];
 
 io.on('connection', (socket) => {
