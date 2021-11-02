@@ -42,7 +42,7 @@ app.get('/history.json', cors({ origin }), (req, res) => {
     const remoteAddress = req.socket.remoteAddress;
 
     if (!remoteAddress.endsWith('.cpe.my-wire.de') && remoteAddress !== '::1') {
-        res.status(403).send('This website is only available from inside the StolzeHaus network');
+        res.status(403).send(remoteAddress);//'This website is only available from inside the StolzeHaus network');
         return;
     }
 
