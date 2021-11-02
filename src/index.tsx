@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+declare global {
+    interface Window { __data: { browserIdentifier: null|string } }
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App browserIdentifier={localStorage.getItem('stolzeHausIdentifier')}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
