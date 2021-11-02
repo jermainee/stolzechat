@@ -50,7 +50,7 @@ export default class InputBar extends React.Component<IAppProps, IInputBarState>
                 timestamp: Date.now(),
             };
 
-            const socket = io(':3001');
+            const socket = io();
             socket.emit('chat message', message);
 
             this.setState({ message: '' });

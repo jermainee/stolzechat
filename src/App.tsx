@@ -32,7 +32,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
             })
             .catch(error => console.log(error));
 
-        const socket = io(':3001');
+        const socket = io();
         socket.on('chat message', message => {
             this.setState({
                 messages: [
