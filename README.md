@@ -1,4 +1,4 @@
-# Socket.io Chatroom with browser fingerprinting
+# StolzeChat
 
 A simple socket.io chatroom with browser-based fingerprinting and identification.
 
