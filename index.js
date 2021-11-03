@@ -25,6 +25,8 @@ io.on('connection', (socket) => {
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/', function (req, res) {
+    const remoteAddress = req.socket.remoteAddress;
+
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 http.listen(port, () => {

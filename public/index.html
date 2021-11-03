@@ -4,23 +4,13 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#ffffff" />
     <title>StolzeChat</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-      const fpPromise = new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.onload = resolve
-        script.onerror = reject
-        script.async = true
-        script.src = 'https://cdn.jsdelivr.net/npm/'
-                + '@fingerprintjs/fingerprintjs@3/dist/fp.min.js'
-        document.head.appendChild(script)
-      }).then(() => FingerprintJS.load())
-      fpPromise.then(fp => fp.get()).then(result => localStorage.setItem('stolzeHausIdentifier', result.visitorId));
-    </script>
     <div id="root"></div>
   </body>
 </html>
