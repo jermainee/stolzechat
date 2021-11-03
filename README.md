@@ -1,5 +1,7 @@
 # Socket.io Chatroom with browser fingerprinting
 
+A simple socket.io chatroom with browser-based fingerprinting and identification.
+
 This project was bootstrapped with the following packages:
  * [facebook/create-react-app](https://github.com/facebook/create-react-app)
  * [expressjs/express](expressjs/express)
