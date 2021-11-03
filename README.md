@@ -1,6 +1,6 @@
 # StolzeChat
 
-A simple socket.io chatroom with browser-based fingerprinting and identification.
+A simple socket.io chatroom with identification via browser fingerprinting
 
 ### Mainly used packages:
  * [facebook/react](https://github.com/facebook/react)
@@ -8,7 +8,7 @@ A simple socket.io chatroom with browser-based fingerprinting and identification
  * [expressjs/express](expressjs/express)
  * [socketio/socket.io](https://github.com/socketio/socket.io)
  * [socketio/socket.io-client](https://github.com/socketio/socket.io-client)
- * [fingerprintjs/fingerprintjs](https://github.com/fingerprintjs/fingerprintjsp)
+ * [fingerprintjs/fingerprintjs](https://github.com/fingerprintjs/fingerprintjs)
  * [jgthms/bulma](https://github.com/jgthms/bulma)
 
 ## Available Scripts
