@@ -3,11 +3,13 @@
 A simple socket.io chatroom with browser-based fingerprinting and identification.
 
 ## Mainly used packages:
- * [facebook/create-react-app](https://github.com/facebook/create-react-app)
+ * [facebook/react](https://github.com/facebook/react)
+ * [microsoft/TypeScript](https://github.com/fmicrosoft/TypeScript)
  * [expressjs/express](expressjs/express)
  * [socketio/socket.io](https://github.com/socketio/socket.io)
  * [socketio/socket.io-client](https://github.com/socketio/socket.io-client)
  * [fingerprintjs/fingerprintjs](https://github.com/fingerprintjs/fingerprintjsp)
+ * [jgthms/bulma](https://github.com/jgthms/bulma)
 
 ## Available Scripts
 
