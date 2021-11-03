@@ -5,7 +5,7 @@ A simple socket.io chatroom with identification via browser fingerprinting.
 ## Buy why?!
 In times of Covid, it's not that easy to meet new people. Even in large student residences, it is sometimes difficult to connect with others when the university demands a lot of you. To make it easier for people to get in touch with each other, I wanted to have an uncomplicated and, for the time being, anonymous way to connect. The StolzeChat is an attempt in this direction.
 
-### Mainly used packages:
+## Mainly used packages:
  * [facebook/react](https://github.com/facebook/react)
  * [microsoft/TypeScript](https://github.com/fmicrosoft/TypeScript)
  * [expressjs/express](expressjs/express)
