@@ -7,7 +7,7 @@ In times of Covid, it's not that easy to meet new people. Even in large student 
 
 ## Mainly used packages:
  * [facebook/react](https://github.com/facebook/react)
- * [microsoft/TypeScript](https://github.com/fmicrosoft/TypeScript)
+ * [microsoft/TypeScript](https://github.com/microsoft/TypeScript)
  * [expressjs/express](https://github.com/expressjs/express)
  * [socketio/socket.io](https://github.com/socketio/socket.io)
  * [socketio/socket.io-client](https://github.com/socketio/socket.io-client)
