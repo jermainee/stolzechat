@@ -2,7 +2,7 @@
 
 A simple socket.io chatroom with browser-based fingerprinting and identification.
 
-## Mainly used packages:
+### Mainly used packages:
  * [facebook/react](https://github.com/facebook/react)
  * [microsoft/TypeScript](https://github.com/fmicrosoft/TypeScript)
  * [expressjs/express](expressjs/express)
