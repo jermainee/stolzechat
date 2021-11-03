@@ -50,7 +50,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
             <>
                 <nav className="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <a className="navbar-item" href="https://bulma.io">
+                        <a className="navbar-item" href="#">
                             <strong>StolzeChat</strong>&nbsp;<small>beta</small>
                         </a>
                     </div>
